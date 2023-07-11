@@ -1,0 +1,334 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+body{
+
+    font-family: 'Chela One', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url(background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+}
+
+
+header{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center ;
+    
+    padding-left: 3rem;
+    padding-right: 4rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    z-index: 99;
+}
+
+.logo {
+
+    font-size: 1.33rem;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+
+    position: relative;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 550;
+    margin-right: 2rem;
+
+}
+
+.navigation a::after {
+ 
+    content: '';
+    position: absolute ;
+    left: 0;
+    bottom: -6px ;
+    width: 100%;
+    height: 3px;
+    background: #fff ;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: .5s;
+    
+
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.btnlogin{
+
+    font-family: inherit;
+    font-size: 1.2rem;
+    height: 2.33rem;
+    background: transparent;
+    padding-bottom: 0.33rem;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    color: #fff;
+    width: 6.5rem;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    font-weight: 550;
+    transition: .5s;
+}
+
+.navigation .btnlogin:hover {
+
+background: #fff;
+color: #162938;
+
+
+}
+
+.wrapper {
+
+    position: relative;
+    width: 27rem;
+    height: 33rem;
+    border: 2px solid #dfdefc;
+    background: transparent;
+    backdrop-filter: blur(3.33px);
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0 0 30px 7px  rgb(0, 51, 255), inset 0 0 30px rgb(0, 47, 255) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease , height .2s ease;
+}
+
+
+.wrapper.active-popup{
+
+    transform: scale(1);
+}
+
+.wrapper.active {
+
+    height: 38rem;
+}
+
+.wrapper .form-box {
+
+    width: 100%;
+    padding: 2rem;
+    height: 7rem;
+
+}
+
+.wrapper.active .form-box.register {
+
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+
+.wrapper.active .form-box.login{
+
+transition: none;
+transform: translateX(-500px);
+
+}
+
+
+
+.wrapper .form-box.register {
+    position: absolute;
+    transform: translateX(500px);
+    transition: none;
+}
+
+.wrapper .icon-close{
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.78rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.852);
+    border-top: none;
+    border-right: none;
+    box-shadow: 0 0 30px  rgb(0, 51, 255) ;
+    border-bottom-left-radius: 20px;
+
+}
+
+.form-box h2 {
+
+    text-align: center;
+    font-size: 3rem;
+    color: #fff;
+    margin-top: -9rem;
+   
+}
+
+.input-box {
+
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    margin: 20px 0 ;
+    border-bottom: 2px solid #fff;
+    
+
+}
+
+.input-box label{
+
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    font-size: 1.3rem;
+    transform: translateY(-50%);
+    transition: 0.5s;
+}
+
+.input-box input:focus~label , 
+.input-box input:valid~label , .input-box input:hover~label
+ {
+
+    top: -5px;
+}
+
+.input-box input {
+    
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    columns: #fff;
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+
+}
+
+.input-box .icon {
+
+    position: absolute;
+    right: 0.25rem;
+    font-size: 1.2rem;
+    line-height: 2.3rem;
+}
+
+.remember-forgot {
+
+    font-size: 1.04rem;
+    font-weight: 500;
+    margin: -4px 0 15px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.remember-forgot label input {
+
+    accent-color: rgb(54, 54, 255)
+    ;
+    
+    margin-right: 0.55rem;
+
+}
+
+
+
+.remember-forgot a {
+
+    color: #dfdefc;
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.remember-forgot a:hover {
+
+    text-decoration: underline;
+}
+
+.btn{
+
+width: 100%;
+height: 2.88rem ;
+font-family: 'Chela One', cursive;
+border: 1px solid rgba(190, 187, 254, 0.705);
+outline: none;
+background-color: rgb(140, 0, 255) ;
+color: #fff;
+border-radius: 6px;
+font-size: 1.3rem;
+font-weight: 530;
+box-shadow: 0 0 15px 2px rgb(124, 16, 255), inset 0 0 10px rgb(124, 16, 255)  ;
+cursor: pointer;
+margin-top: 1.22rem;
+}
+
+.btn:hover {
+
+    border: 2px solid rgb(103, 5, 169) ;
+
+    box-shadow: 0 0 0 ;
+
+}
+
+.login-register {
+
+    font-size: 1.04rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    margin: 1rem 0 rem;
+    margin-top: 15px;
+    
+}
+
+.login-register p a {
+
+    text-decoration: none;
+    color: #dfdefc;
+    margin-left: 7px ;
+    font-weight: 550;
+}
+
+.login-register p a:hover {
+
+   text-decoration: underline;
+}
